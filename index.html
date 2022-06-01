@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/js/all.js">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css" integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR" crossorigin="anonymous">
+
+    <title>index</title>
+  </head>
+ <body style="background-color:rgb(230, 169, 17) ;" >
+   
+  <canvas id="Rectangles" width="300" height="200">
+    <p>Your browser does not support the canvas tag.</p> 
+    <p>Here's an <a href="/pix/html_5/tags/html_canvas_tag.gif">image of what it's supposed to look like</a>.</p>
+    </canvas>
+    <script>
+    var canvasRect = document.getElementById("Rectangles");
+    if (canvasRect.getContext) {
+      var ctxRect = canvasRect.getContext("2d");
+    
+      ctxRect.fillStyle = "rgb(9, 165, 9)";
+      ctxRect.fillRect (50,150, 150, 75);
+      ctxRect.lineWidth = 5;
+      ctxRect.fillStyle = "rgba(0, 50, 400, 0.5)";
+      ctxRect.fillRect (40,30, 125, 75);
+      ctxRect.lineWidth = 5;
+      ctxRect.fillStyle = "rgba(40, 100, 500, 1.5)";
+      ctxRect.fillRect (20,40, 125, 75);
+      ctxRect.lineWidth = 5;
+      ctxRect.fillStyle = "rgba(50, 80, 700, 2.5)";
+      ctxRect.fillRect (30,50, 125, 75);
+      ctxRect.lineWidth = 5;
+      ctxRect.fillStyle = "rgba(90, 100, 300, 3.5)";
+      ctxRect.fillRect (70,60, 125, 75);
+      ctxRect.lineWidth = 5;
+      ctxRect.fillStyle =  "rgb(9, 165, 9)";
+      ctxRect.strokeRect (20, 50, 50, 100);
+      ctxRect.lineWidth = 5; 
+      
+    }
+    </script>
+
+
+    <canvas id="Path"><p>Your browser does not support the canvas tag.</p></canvas>
+<script>
+var canvasPath = document.getElementById("Path");
+if (canvasPath.getContext) {
+	var ctxPath = canvasPath.getContext("2d");
+
+	ctxPath.beginPath();
+	ctxPath.moveTo(150, 130);
+	ctxPath.bezierCurveTo(90, 100, 40, 75, 160, 15);
+	ctxPath.bezierCurveTo(130, 50, 110, 75, 150, 130);
+	
+	ctxPath.closePath();
+	ctxPath.lineWidth = 5;
+	ctxPath.strokeStyle = "rgb(50, 300, 132)";
+	ctxPath.stroke(); 
+}
+</script>
+
+
+<canvas id="Image"><p>Your browser does not support the canvas tag.</p></canvas>
+<script>
+var canvasImage = document.getElementById("Image");
+if (canvasImage.getContext) {
+	var ctxImage = canvasImage.getContext('2d');
+	var imageObj = new Image();
+	
+	imageObj.onload = function() {
+	  ctxImage.drawImage(imageObj, 140,50);
+	};
+	imageObj.src = 'static/image/67.jpg';
+ }
+</script>
+
+ </body>
